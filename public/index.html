@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <button onclick="showSection('main-container')">Main</button>
+      <button onclick="showSection('login-container')">Login</button>
+      <button onclick="showSection('register-container')">Register</button>
+    </nav>
+
+    <div class="">
+      <h1 class="text-red-700">Welcome To Movies</h1>
+      <!-- MAIN SECTION -->
+      <div id="main-container" class="hidden">
+        
+      </div>
+
+      <!-- REGISTER SECTION -->
+      <div id="register-container" class="">
+        <form action="">
+          <h2>Register</h2>
+          <input type="text" id="reg-username" placeholder="Username" />
+          <input type="password" id="reg-password" placeholder="Password" />
+          <input type="tel" id="reg-name" placeholder="Name" />
+          <button onclick="register()">Submit</button>
+        </form>
+      </div>
+
+      <!-- LOGIN SECTION -->
+      <div id="login-container" class="hidden">
+        <form action="">
+          <h2>Login</h2>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button onclick="login()">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/dist/index.js" type="module"></script>
+</html>
