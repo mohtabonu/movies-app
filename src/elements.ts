@@ -1,5 +1,8 @@
 export const mainContainer: HTMLDivElement = document.querySelector('#main-container')!;
 
+export const movBtnElm: HTMLButtonElement = document.querySelector('#movies-btn')!;
+export const movTitleElm: HTMLHeadElement = document.querySelector('#movies-title')!;
+
 export const registerContainer: HTMLDivElement = document.querySelector('#register-container')!;
 export const regUsername: HTMLInputElement = document.querySelector('#register-username')!;
 export const regPassword: HTMLInputElement = document.querySelector('#register-password')!;

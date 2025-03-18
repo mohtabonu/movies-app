@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="../dist/index.css" />
   </head>
   <body class="bg-gray-700">
-    <div class="m-auto w-[1310px] px-[15px]">
+    <div class="m-auto w-[1330px] px-[10px]">
       <!-- NAVBAR -->
       <nav class="mb-[30px] mt-[10px] flex items-center justify-between">
-        <img src="../img/mobile-app (1).png" alt="" class="h-[60px] w-[60px]" />
+        <img src="../img/movie.png" alt="" class="h-[60px] w-[60px]" />
         <div class="flex items-center gap-[5px]">
-          <button
+          <button id="movies-btn"
             onclick="showSection('main-container')"
-            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-cyan-300"
+            class="mb-2 me-2 hidden rounded-lg bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-cyan-300"
           >
             Movies
           </button>
@@ -32,10 +32,10 @@
           </button>
         </div>
       </nav>
-
+      <h1 id="movies-title" class="mt-[200px] text-center text-[50px] font-bold text-white">Welcome To Movies App</h1>
       <!-- MAIN SECTION -->
       <div id="main-container" class="hidden">
-        <h1 class="text-center text-[50px] font-bold text-white">Welcome To Movies</h1>
+        <h2 class="text-center text-[50px] font-bold text-white">Movies</h2>
       </div>
 
       <!-- REGISTER SECTION -->
