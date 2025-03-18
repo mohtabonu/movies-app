@@ -4,41 +4,138 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../dist/index.css" />
   </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav>
-      <button onclick="showSection('main-container')">Main</button>
-      <button onclick="showSection('login-container')">Login</button>
-      <button onclick="showSection('register-container')">Register</button>
-    </nav>
+  <body class="bg-gray-700">
+    <div class="m-auto w-[1310px] px-[15px]">
+      <!-- NAVBAR -->
+      <nav class="mb-[30px] mt-[10px] flex items-center justify-between">
+        <img src="../img/mobile-app (1).png" alt="" class="h-[60px] w-[60px]" />
+        <div class="flex items-center gap-[5px]">
+          <button
+            onclick="showSection('main-container')"
+            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-cyan-300"
+          >
+            Movies
+          </button>
+          <button
+            onclick="showSection('login-container')"
+            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-teal-300"
+          >
+            Login
+          </button>
+          <button
+            onclick="showSection('register-container')"
+            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-lime-300"
+          >
+            Register
+          </button>
+        </div>
+      </nav>
 
-    <div class="">
-      <h1 class="text-red-700">Welcome To Movies</h1>
       <!-- MAIN SECTION -->
       <div id="main-container" class="hidden">
-        
+        <h1 class="text-center text-[50px] font-bold text-white">Welcome To Movies</h1>
       </div>
 
       <!-- REGISTER SECTION -->
-      <div id="register-container" class="">
-        <form action="">
-          <h2>Register</h2>
-          <input type="text" id="reg-username" placeholder="Username" />
-          <input type="password" id="reg-password" placeholder="Password" />
-          <input type="tel" id="reg-name" placeholder="Name" />
-          <button onclick="register()">Submit</button>
+      <div id="register-container" class="hidden">
+        <form action="" class="max-w-md mx-auto">
+          <h2 class="mb-[50px] text-center text-[40px] font-semibold text-white">Movies App Register</h2>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="register_username"
+              id="register-username"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="register_username"
+              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >Username</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="password"
+              name="register_password"
+              id="register-password"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="register_password"
+              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >Password</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="register_name"
+              id="register-name"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="register_name"
+              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >Name</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Register
+          </button>
         </form>
       </div>
 
       <!-- LOGIN SECTION -->
       <div id="login-container" class="hidden">
-        <form action="">
-          <h2>Login</h2>
-          <input type="text" id="login-username" placeholder="Username" />
-          <input type="password" id="login-password" placeholder="Password" />
-          <button onclick="login()">Login</button>
+        <form action="" class="max-w-md mx-auto">
+          <h2 class="mb-[50px] text-center text-[40px] font-semibold text-white">Movies App Login</h2>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="login_username"
+              id="login-username"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="login_username"
+              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >Username</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="password"
+              name="login_password"
+              id="login-password"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="login_password"
+              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >Password</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Login
+          </button>
         </form>
       </div>
     </div>
