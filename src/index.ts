@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if(loginUsername.value === 'admin' && loginPassword.value === 'root123'){
             movBtnElm.style.display = 'block'
             showContainers(mainContainer);
+        }else{
+            alert("Error username or password!")
+            loginUsername.value = '';
+            loginPassword.value = '';
         }
     })
   }
