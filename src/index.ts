@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
     for (const key in movies_information) {
       if (key === objectKey) {
         delete (movies_information as any)[key];
-        console.log(movies_information)
       }
       renderMovies();
       renderCategories();
