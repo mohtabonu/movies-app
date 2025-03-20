@@ -1,4 +1,11 @@
-export const movies_information = {
+interface MovieInfo {
+  movieTitle: string;
+  rating: number;
+  category: string;
+}
+
+
+export const movies_information: { [key: string]: MovieInfo } = {
   // ! Drama
   '0': {
     movieTitle: 'The Shawshank Redemption',

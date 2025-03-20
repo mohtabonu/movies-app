@@ -9,49 +9,93 @@
   <body class="bg-gray-700">
     <div class="m-auto w-[1330px] px-[10px]">
       <!-- NAVBAR -->
-      <nav class="mb-[30px] mt-[10px] flex items-center justify-between">
+      <nav class="flex justify-between items-center mb-[30px] mt-[10px]">
         <img src="../img/movie.png" alt="" class="h-[60px] w-[60px] cursor-pointer"/>
-        <div class="flex items-center gap-[5px]">
+        <div class="flex gap-[5px] items-center">
           <button id="movies-btn"
             onclick="showSection('main-container')"
-            class="mb-2 me-2 hidden rounded-lg bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-cyan-300"
+            class="bg-gradient-to-r rounded-lg text-center text-lg text-white focus:outline-none focus:ring-4 focus:ring-cyan-300 font-medium from-cyan-400 hidden hover:bg-gradient-to-br mb-2 me-2 px-5 py-2.5 to-cyan-600 via-cyan-500"
           >
             Movies
           </button>
           <button
             onclick="showSection('login-container')"
-            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-teal-300"
+            class="bg-gradient-to-r rounded-lg text-center text-lg text-white focus:outline-none focus:ring-4 focus:ring-teal-300 font-medium from-teal-400 hover:bg-gradient-to-br mb-2 me-2 px-5 py-2.5 to-teal-600 via-teal-500"
           >
             Login
           </button>
           <button
             onclick="showSection('register-container')"
-            class="mb-2 me-2 rounded-lg bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-lime-300"
+            class="bg-gradient-to-r rounded-lg text-center text-lg text-white focus:outline-none focus:ring-4 focus:ring-lime-300 font-medium from-lime-200 hover:bg-gradient-to-br mb-2 me-2 px-5 py-2.5 to-lime-500 via-lime-400"
           >
             Register
           </button>
         </div>
       </nav>
-      <h1 id="movies-title" class="mt-[200px] text-center text-[50px] font-bold text-white">Welcome To Movies App</h1>
+     <div id="welcomeContainer"> <h1 id="movies-title" class="text-[50px] text-center text-white font-bold  mt-[200px]">Welcome To Movies App</h1></div>
+
+      <!-- ADD NEW MOVIE -->
+      <div id="add-new-movie" class="hidden">
+        <div class="flex flex-col justify-center m-auto w-[60%] items-center mt-[50px]">
+          <h1 class="text-[35px] text-white font-[700]">Add New Movie</h1>
+        <form id="newMovieForm" class="flex flex-col justify-center w-full gap-9 items-center mt-10">
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Name</h1>
+            <input required id="nameInput" type="text" class="text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Rate</h1>
+            <input required id="rateInput" type="text" class="text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Category</h1>
+            <input required id="categoryInput" type="text" class=" text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <button type="submit" class="bg-gradient-to-r px-4 py-2 rounded-lg text-[18px] text-white w-auto font-semibold from-blue-500 hover:from-blue-600 hover:to-blue-800 mt-3 to-blue-700">Add Movie</button>
+        </form>
+        </div>
+      </div>
+
+       <!-- EDIT MOVIE -->
+       <div id="edit-movie" class="hidden">
+        <div class="flex flex-col justify-center m-auto w-[60%] items-center mt-[50px]">
+          <h1 class="text-[35px] text-white font-[700]">Edit Movie</h1>
+        <form id="newMovieForm" class="flex flex-col justify-center w-full gap-9 items-center mt-10">
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Name</h1>
+            <input required id="nameInput" type="text" class="text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Rate</h1>
+            <input required id="rateInput" type="text" class="text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <div class="flex flex-col justify-center gap-2 items-start">
+            <h1 class="text-[22px] text-white">Movie Category</h1>
+            <input required id="categoryInput" type="text" class=" text-white bg-transparent border border-white h-[40px] rounded-md w-[500px] focus:border-2 focus:outline-none indent-2">
+          </div>
+          <button type="submit" class="bg-gradient-to-r px-4 py-2 rounded-lg text-[18px] text-white w-auto font-semibold from-blue-500 hover:from-blue-600 hover:to-blue-800 mt-3 to-blue-700">Edit Movie</button>
+        </form>
+        </div>
+      </div>
       <!-- MAIN SECTION -->
       <div id="main-container" class="hidden">
-        <h2 class="text-center text-[50px] font-bold text-white ">Movies</h2>
-          <div class="flex items-center justify-center mt-5 flex-col">
+        <h2 class="text-[50px] text-center text-white font-bold">Movies</h2>
+          <div class="flex flex-col justify-center items-center mt-5">
           <input 
             type="search" 
             placeholder="Search..." 
-            class="w-[70%]  px-4 py-2 border border-gray-300 text-[20px] text-gray-700 rounded-lg outline-none"
+            class="border border-gray-300 rounded-lg text-[20px] text-gray-700 w-[70%] outline-none px-4 py-2"
             id="searchInput"
             >
           </div>
-          <div  class="flex items-start mt-5 gap-[80px]">
+          <div  class="flex gap-[80px] items-start mt-5">
             <div class="w-[200px]">    
-                <ul id="categoryWrap" class="divide-y divide-gray-300   bg-white border border-gray-300 rounded-lg shadow-sm  w-full">
+                <ul id="categoryWrap" class="bg-white border border-gray-300 rounded-lg shadow-sm w-full divide-gray-300 divide-y">
                 
                 </ul>
-              <button class="p-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full rounded-lg mt-3 text-white text-[16px] font-semibold  hover:from-blue-600 hover:to-blue-800">New Movie</button>
+              <button id="addNewMovieBtn" class="bg-gradient-to-r p-2 rounded-lg text-[16px] text-white w-full font-semibold from-blue-500 hover:from-blue-600 hover:to-blue-800 mt-3 to-blue-700">New Movie</button>
             </div>
-            <div class="overflow-x-auto w-[800px] rounded-[10px]" id="movies-wrap">
+            <div class="rounded-[10px] w-[800px] overflow-x-auto" id="movies-wrap">
             </div> 
           </div>
          
@@ -60,55 +104,55 @@
       <!-- REGISTER SECTION -->
       <div id="register-container" class="hidden">
         <form action="" class="max-w-md mx-auto">
-          <h2 class="mb-[50px] text-center text-[40px] font-semibold text-white">Movies App Register</h2>
-          <div class="relative z-0 w-full mb-5 group">
+          <h2 class="text-[40px] text-center text-white font-semibold mb-[50px]">Movies App Register</h2>
+          <div class="w-full group mb-5 relative z-0">
             <input
               type="text"
               name="register_username"
               id="register-username"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="bg-transparent border-0 border-b-2 border-gray-300 text-lg text-white w-full appearance-none block dark:border-gray-600 dark:focus:border-blue-500 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 peer px-0 py-2.5"
               placeholder=" "
               required
             />
             <label
               for="register_username"
-              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              class="text-gray-500 text-lg -translate-y-6 -z-10 absolute dark:text-gray-400 duration-300 origin-[0] peer-focus:-translate-y-6 peer-focus:dark:text-blue-500 peer-focus:font-medium peer-focus:scale-75 peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 scale-75 top-3 transform"
               >Username</label
             >
           </div>
-          <div class="relative z-0 w-full mb-5 group">
+          <div class="w-full group mb-5 relative z-0">
             <input
               type="password"
               name="register_password"
               id="register-password"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="bg-transparent border-0 border-b-2 border-gray-300 text-lg text-white w-full appearance-none block dark:border-gray-600 dark:focus:border-blue-500 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 peer px-0 py-2.5"
               placeholder=" "
               required
             />
             <label
               for="register_password"
-              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              class="text-gray-500 text-lg -translate-y-6 -z-10 absolute dark:text-gray-400 duration-300 origin-[0] peer-focus:-translate-y-6 peer-focus:dark:text-blue-500 peer-focus:font-medium peer-focus:scale-75 peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 rtl:peer-focus:translate-x-1/4 scale-75 top-3 transform"
               >Password</label
             >
           </div>
-          <div class="relative z-0 w-full mb-5 group">
+          <div class="w-full group mb-5 relative z-0">
             <input
               type="text"
               name="register_name"
               id="register-name"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="bg-transparent border-0 border-b-2 border-gray-300 text-lg text-white w-full appearance-none block dark:border-gray-600 dark:focus:border-blue-500 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 peer px-0 py-2.5"
               placeholder=" "
               required
             />
             <label
               for="register_name"
-              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              class="text-gray-500 text-lg -translate-y-6 -z-10 absolute dark:text-gray-400 duration-300 origin-[0] peer-focus:-translate-y-6 peer-focus:dark:text-blue-500 peer-focus:font-medium peer-focus:scale-75 peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 scale-75 top-3 transform"
               >Name</label
             >
           </div>
           <button
             type="submit"
-            class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="bg-blue-700 rounded-lg text-center text-lg text-white w-full dark:bg-blue-600 dark:focus:ring-blue-800 dark:hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 px-5 py-2.5 sm:w-auto"
           >
             Register
           </button>
@@ -118,40 +162,40 @@
       <!-- LOGIN SECTION -->
       <div id="login-container" class="hidden">
         <form action="" class="max-w-md mx-auto">
-          <h2 class="mb-[50px] text-center text-[40px] font-semibold text-white">Movies App Login</h2>
-          <div class="relative z-0 w-full mb-5 group">
+          <h2 class="text-[40px] text-center text-white font-semibold mb-[50px]">Movies App Login</h2>
+          <div class="w-full group mb-5 relative z-0">
             <input
               type="text"
               name="login_username"
               id="login-username"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="bg-transparent border-0 border-b-2 border-gray-300 text-lg text-white w-full appearance-none block dark:border-gray-600 dark:focus:border-blue-500 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 peer px-0 py-2.5"
               placeholder=" "
               required
             />
             <label
               for="login_username"
-              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              class="text-gray-500 text-lg -translate-y-6 -z-10 absolute dark:text-gray-400 duration-300 origin-[0] peer-focus:-translate-y-6 peer-focus:dark:text-blue-500 peer-focus:font-medium peer-focus:scale-75 peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 scale-75 top-3 transform"
               >Username</label
             >
           </div>
-          <div class="relative z-0 w-full mb-5 group">
+          <div class="w-full group mb-5 relative z-0">
             <input
               type="password"
               name="login_password"
               id="login-password"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="bg-transparent border-0 border-b-2 border-gray-300 text-lg text-white w-full appearance-none block dark:border-gray-600 dark:focus:border-blue-500 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 peer px-0 py-2.5"
               placeholder=" "
               required
             />
             <label
               for="login_password"
-              class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-lg text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              class="text-gray-500 text-lg -translate-y-6 -z-10 absolute dark:text-gray-400 duration-300 origin-[0] peer-focus:-translate-y-6 peer-focus:dark:text-blue-500 peer-focus:font-medium peer-focus:scale-75 peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 rtl:peer-focus:translate-x-1/4 scale-75 top-3 transform"
               >Password</label
             >
           </div>
           <button
             type="submit"
-            class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="bg-blue-700 rounded-lg text-center text-lg text-white w-full dark:bg-blue-600 dark:focus:ring-blue-800 dark:hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 px-5 py-2.5 sm:w-auto"
           >
             Login
           </button>

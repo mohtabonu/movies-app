@@ -15,3 +15,7 @@ export const loginPassword: HTMLInputElement = document.querySelector('#login-pa
 
 export const categoryWrap: HTMLUListElement = document.querySelector('#categoryWrap')!;
 export const searchElm: HTMLInputElement = document.querySelector('#searchInput')!;
+
+export const addNewContainer: HTMLDivElement=document.querySelector("#add-new-movie")!
+export const welcomeContainer:HTMLDivElement=document.querySelector("#welcomeContainer")!
+export const addNewMovieBtn:HTMLButtonElement=document.querySelector("#addNewMovieBtn")!

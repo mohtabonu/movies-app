@@ -12,12 +12,16 @@ import {
   loginPassword,
   movWrap,
   categoryWrap,
-  searchElm
+  searchElm,
+  addNewContainer,
+  addNewMovieBtn,
+  welcomeContainer
 } from './elements';
 
 document.addEventListener('DOMContentLoaded', function () {
   function showContainers(targetContainer: HTMLDivElement) {
-    const containers = [mainContainer, registerContainer, loginContainer];
+    const containers = [mainContainer, registerContainer, loginContainer, addNewContainer, welcomeContainer];
+    console.log(containers);
 
     containers.forEach(container => {
       container.style.display = container === targetContainer ? 'block' : 'none';
@@ -59,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   function renderMovies(selectedCategory = 'all', searchQuery = '') {
+    console.log(movies_information);
     movWrap.innerHTML = '';
 
     const table = document.createElement('table');
@@ -120,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function deleteMovie(objectKey: string) {
-
     for (const key in movies_information) {
       if (key === objectKey) {
         delete (movies_information as any)[key];
@@ -129,8 +133,34 @@ document.addEventListener('DOMContentLoaded', function () {
       renderCategories();
     }
   }
+  function addNewMovie(e: SubmitEvent) {
+    e.preventDefault();
+
+    const nameInput = addNewContainer.querySelector('#nameInput') as HTMLInputElement;
+    const rateInput = addNewContainer.querySelector('#rateInput') as HTMLInputElement;
+    const categoryInput = addNewContainer.querySelector('#categoryInput') as HTMLInputElement;
+
+    movies_information[String(Object.keys(movies_information).length)] = {
+      movieTitle: nameInput.value,
+      rating: Number(rateInput.value),
+      category: categoryInput.value
+    };
+    showContainers(mainContainer);
+    renderMovies();
+    renderCategories();
+    nameInput.value = '';
+    rateInput.value = '';
+    categoryInput.value = '';
+  }
   searchElm.addEventListener('input', () => renderMovies(undefined, searchElm.value));
 
+  addNewMovieBtn.addEventListener('click', () => {
+    showContainers(addNewContainer);
+  });
+
+  addNewContainer.addEventListener('submit', e => {
+    addNewMovie(e);
+  });
   const registerForm = document.querySelector('#register-container form');
   if (registerForm) {
     registerForm.addEventListener('submit', event => {
