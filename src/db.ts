@@ -41,19 +41,19 @@ export const movies_information = {
   "Pan's Labyrinth": {
     movieTitle: "Pan's Labyrinth",
     rating: 8.2,
-    category: 'Fantasy'
+    category: 'Fantastic'
   },
 
   "Stardust": {
     movieTitle: 'Stardust',
     rating: 7.6,
-    category: 'Fantasy'
+    category: 'Fantastic'
   },
 
   "Willow": {
     movieTitle: 'Willow',
     rating: 7.2,
-    category: 'Fantasy'
+    category: 'Fantastic'
   },
 
   // ! Thriller

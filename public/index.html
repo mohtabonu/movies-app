@@ -10,7 +10,7 @@
     <div class="m-auto w-[1330px] px-[10px]">
       <!-- NAVBAR -->
       <nav class="mb-[30px] mt-[10px] flex items-center justify-between">
-        <img src="../img/movie.png" alt="" class="h-[60px] w-[60px]" />
+        <img src="../img/movie.png" alt="" class="h-[60px] w-[60px] cursor-pointer"/>
         <div class="flex items-center gap-[5px]">
           <button id="movies-btn"
             onclick="showSection('main-container')"
@@ -35,7 +35,26 @@
       <h1 id="movies-title" class="mt-[200px] text-center text-[50px] font-bold text-white">Welcome To Movies App</h1>
       <!-- MAIN SECTION -->
       <div id="main-container" class="hidden">
-        <h2 class="text-center text-[50px] font-bold text-white">Movies</h2>
+        <h2 class="text-center text-[50px] font-bold text-white ">Movies</h2>
+          <div class="flex items-center justify-center mt-5 flex-col">
+          <input 
+            type="search" 
+            placeholder="Search..." 
+            class="w-[70%]  px-4 py-2 border border-gray-300 text-[20px] text-gray-700 rounded-lg outline-none"
+            id="searchInput"
+            >
+          </div>
+          <div  class="flex items-start mt-5 gap-[80px]">
+            <div class="w-[200px]">    
+                <ul id="categoryWrap" class="divide-y divide-gray-300   bg-white border border-gray-300 rounded-lg shadow-sm  w-full">
+                
+                </ul>
+              <button class="p-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full rounded-lg mt-3 text-white text-[16px] font-semibold  hover:from-blue-600 hover:to-blue-800">New Movie</button>
+            </div>
+            <div class="overflow-x-auto w-[800px] rounded-[10px]" id="movies-wrap">
+            </div> 
+          </div>
+         
       </div>
 
       <!-- REGISTER SECTION -->
@@ -47,7 +66,7 @@
               type="text"
               name="register_username"
               id="register-username"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
               placeholder=" "
               required
             />
@@ -62,7 +81,7 @@
               type="password"
               name="register_password"
               id="register-password"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
               placeholder=" "
               required
             />
@@ -77,7 +96,7 @@
               type="text"
               name="register_name"
               id="register-name"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
               placeholder=" "
               required
             />
@@ -105,7 +124,7 @@
               type="text"
               name="login_username"
               id="login-username"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
               placeholder=" "
               required
             />
@@ -120,7 +139,7 @@
               type="password"
               name="login_password"
               id="login-password"
-              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-lg text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
               placeholder=" "
               required
             />
