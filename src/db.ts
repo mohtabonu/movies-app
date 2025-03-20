@@ -1,76 +1,76 @@
 export const movies_information = {
   // ! Drama
-  'The Shawshank Redemption': {
+  'the-shawshank-redemption': {
     movieTitle: 'The Shawshank Redemption',
     rating: 9.3,
     category: 'Drama'
   },
 
-  'Forrest Gump': {
+  'forrest-gump': {
     movieTitle: 'Forrest Gump',
     rating: 8.8,
     category: 'Drama'
   },
 
-  'The Green Mile': {
+  'the-green-mile': {
     movieTitle: 'The Green Mile',
     rating: 8.6,
     category: 'Drama'
   },
 
   // ! Sci-Fi
-  Interstellar: {
+  'interstellar': {
     movieTitle: 'Interstellar',
     rating: 8.7,
     category: 'Sci-Fi'
   },
 
-  Inception: {
+  'inception': {
     movieTitle: 'Inception',
     rating: 8.8,
     category: 'Sci-Fi'
   },
 
-  'Blade Runner 2049': {
+  'blade-runner-2049': {
     movieTitle: 'Blade Runner 2049',
     rating: 8.0,
     category: 'Sci-Fi'
   },
 
   // ! Fantasy
-  "Pan's Labyrinth": {
+  'pans-labyrinth': {
     movieTitle: "Pan's Labyrinth",
     rating: 8.2,
     category: 'Fantastic'
   },
 
-  "Stardust": {
+  'stardust': {
     movieTitle: 'Stardust',
     rating: 7.6,
     category: 'Fantastic'
   },
 
-  "Willow": {
+  'willow': {
     movieTitle: 'Willow',
     rating: 7.2,
     category: 'Fantastic'
   },
 
   // ! Thriller
-  "Se7en": {
-    movieTitle: "Se7en",
+  'se7en': {
+    movieTitle: 'Se7en',
     rating: 8.6,
     category: 'Thriller'
   },
 
-  "Shutter Island": {
-    movieTitle: "Shutter Island",
+  'shutter-island': {
+    movieTitle: 'Shutter Island',
     rating: 8.2,
     category: 'Thriller'
   },
   
-  "Gone Girl": {
-    movieTitle: "Gone Girl",
+  'gone-girl': {
+    movieTitle: 'Gone Girl',
     rating: 8.1,
     category: 'Thriller'
   }
