@@ -17,5 +17,6 @@ export const categoryWrap: HTMLUListElement = document.querySelector('#categoryW
 export const searchElm: HTMLInputElement = document.querySelector('#searchInput')!;
 
 export const addNewContainer: HTMLDivElement=document.querySelector("#add-new-movie")!
+export const editContainer:HTMLDivElement=document.querySelector("#edit-movie")!
 export const welcomeContainer:HTMLDivElement=document.querySelector("#welcomeContainer")!
 export const addNewMovieBtn:HTMLButtonElement=document.querySelector("#addNewMovieBtn")!

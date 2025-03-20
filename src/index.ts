@@ -15,13 +15,13 @@ import {
   searchElm,
   addNewContainer,
   addNewMovieBtn,
-  welcomeContainer
+  welcomeContainer,
+  editContainer
 } from './elements';
 
 document.addEventListener('DOMContentLoaded', function () {
   function showContainers(targetContainer: HTMLDivElement) {
-    const containers = [mainContainer, registerContainer, loginContainer, addNewContainer, welcomeContainer];
-    console.log(containers);
+    const containers = [mainContainer, registerContainer, loginContainer, addNewContainer, welcomeContainer, editContainer];
 
     containers.forEach(container => {
       container.style.display = container === targetContainer ? 'block' : 'none';
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   function renderMovies(selectedCategory = 'all', searchQuery = '') {
-    console.log(movies_information);
     movWrap.innerHTML = '';
 
     const table = document.createElement('table');
@@ -92,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
           tr.className = 'border-b hover:bg-gray-50';
 
           tr.innerHTML = `
-                  <td class="text-blue-600 cursor-pointer px-5 py-3">${movie.movieTitle}</td>
+                  <td class="text-blue-600 cursor-pointer movie-title px-5 py-3" data-value=${key}>${movie.movieTitle}</td>
                   <td class="px-5 py-3">${movie.category}</td>
                   <td class="px-5 py-3">${movie.rating}</td>
                   <td class="px-5 py-3">
@@ -116,13 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
     movWrap.appendChild(table);
   }
 
-  movWrap.addEventListener('click', function (event) {
-    const target = event.target as HTMLElement;
-    if (target.classList.contains('deleteBtn')) {
-      const objectKey = target.dataset.value!;
-      deleteMovie(objectKey);
-    }
-  });
 
   function deleteMovie(objectKey: string) {
     for (const key in movies_information) {
@@ -152,15 +144,62 @@ document.addEventListener('DOMContentLoaded', function () {
     rateInput.value = '';
     categoryInput.value = '';
   }
+  function updateMovieInfo(movieKey:string,movieTitle:string,rating:number,category:string) {
+    movies_information[movieKey]={movieTitle,rating,category}
+    showContainers(mainContainer)
+    renderMovies()
+    renderCategories()
+
+  }
+  movWrap.addEventListener('click', function (event) {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('deleteBtn')) {
+      const objectKey = target.dataset.value!;
+      deleteMovie(objectKey);
+    }
+    else if (target.classList.contains("movie-title")) {
+      showContainers(editContainer);
+      const movieKey = target.dataset.value!;
+      const movieInfo = movies_information[movieKey];
+
+
+      const editNameInput = document.querySelector('#editnameInput') as HTMLInputElement;
+      const editRateInput = document.querySelector('#editrateInput') as HTMLInputElement;
+      const editCategoryInput = document.querySelector('#editcategoryInput') as HTMLInputElement;
+      editNameInput.value = movieInfo.movieTitle;
+      editRateInput.value = String(movieInfo.rating);
+      editCategoryInput.value = movieInfo.category; 
+      editContainer.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        updateMovieInfo(movieKey, editNameInput.value,Number(editRateInput.value),editCategoryInput.value)
+      })     
+    }
+  });
+  // movWrap.addEventListener('click', event => {
+  //   const target = event.target as HTMLTableCellElement;
+
+  //   if ((target.className = 'movie-title')) {
+  //       showContainers(editContainer);
+  //     const movieKey = target.dataset.value!;
+  //     const movieInfo = movies_information[movieKey];
+
+
+  //     const editNameInput = document.querySelector('#editnameInput') as HTMLInputElement;
+  //     const editRateInput = document.querySelector('#editrateInput') as HTMLInputElement;
+  //     const editCategoryInput = document.querySelector('#editcategoryInput') as HTMLInputElement;
+  //     editNameInput.value = movieInfo.movieTitle;
+  //     editRateInput.value = String(movieInfo.rating);
+  //     editCategoryInput.value = movieInfo.category; 
+  //     editContainer.addEventListener("submit",(e)=>{
+  //       e.preventDefault()
+  //       updateMovieInfo(movieKey, editNameInput.value,Number(editRateInput.value),editCategoryInput.value)
+  //     })     
+  //   }
+  // });
   searchElm.addEventListener('input', () => renderMovies(undefined, searchElm.value));
+  addNewMovieBtn.addEventListener('click', () => showContainers(addNewContainer));
+  addNewContainer.addEventListener('submit', e => addNewMovie(e));
 
-  addNewMovieBtn.addEventListener('click', () => {
-    showContainers(addNewContainer);
-  });
-
-  addNewContainer.addEventListener('submit', e => {
-    addNewMovie(e);
-  });
   const registerForm = document.querySelector('#register-container form');
   if (registerForm) {
     registerForm.addEventListener('submit', event => {
